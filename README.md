@@ -6,7 +6,7 @@ This is a pure Python implementation of the
 protocol. This protocol can be used to inform `systemd` about service start-up
 completion, watchdog events, and other service status changes. Thus, this
 package can be used to write system services in Python that play nicely with
-`systemd`.
+`systemd`. `sdnotify` is compatible with both Python 2 and Python 3.
 
 # Example Usage
 
