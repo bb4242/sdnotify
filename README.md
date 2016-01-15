@@ -15,22 +15,26 @@ startup sequence is complete. It also sends periodic status updates to `systemd`
 which can be viewed with `systemctl status test`.
 
 ## `test.py`
+
     import sdnotify
 	import time
 
 	print("Test starting up...")
+	# In a real service, this is where you'd do real startup tasks
+	# like opening listening sockets, connecting to a database, etc...
 	time.sleep(10)
 	print("Test startup finished")
+
+	# Inform systemd that we've finished our startup sequence...
 	n = sdnotify.SystemdNotifier()
 	n.notify("READY=1")
 
 	count = 1
 	while True:
-		print("running... {}".format(count))
+		print("Running... {}".format(count))
 		n.notify("STATUS=Count is {}".format(count))
 		count += 1
 		time.sleep(2)
-
 
 ## `test.service`
 
@@ -41,6 +45,9 @@ which can be viewed with `systemctl status test`.
     # Note: setting PYTHONUNBUFFERED is necessary to see the output of this service in the journal
     # See https://docs.python.org/2/using/cmdline.html#envvar-PYTHONUNBUFFERED
     Environment=PYTHONUNBUFFERED=true
+	
     ExecStart=/usr/bin/python /path/to/test.py
-    Type=notify
 
+    # Note that we use Type=notify here since test.py will send "READY=1"
+    # when it's finished starting up
+	Type=notify
