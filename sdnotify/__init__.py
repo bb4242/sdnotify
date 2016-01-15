@@ -2,6 +2,8 @@ import socket
 import os
 import sys
 
+__version__ = "0.3.0"
+
 # Byte conversion utility for compatibility between
 # Python 2 and 3.
 # http://python3porting.com/problems.html#nicer-solutions
