@@ -1,16 +1,16 @@
 import socket
 import os
+import sys
 
 # Byte conversion utility for compatibility between
 # Python 2 and 3.
 # http://python3porting.com/problems.html#nicer-solutions
-import sys
 if sys.version_info < (3,):
-    def b(x):
+    def _b(x):
         return x
 else:
     import codecs
-    def b(x):
+    def _b(x):
         return codecs.latin_1_encode(x)[0]
 
 
@@ -51,7 +51,7 @@ class SystemdNotifier:
         cause this method to raise any exceptions generated to the caller, to
         aid in debugging."""
         try:
-            self.socket.sendall(b(state))
+            self.socket.sendall(_b(state))
         except:
             if self.debug:
                 raise
