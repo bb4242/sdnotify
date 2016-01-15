@@ -45,7 +45,8 @@ which can be viewed with `systemctl status test`.
     # Note: setting PYTHONUNBUFFERED is necessary to see the output of this service in the journal
     # See https://docs.python.org/2/using/cmdline.html#envvar-PYTHONUNBUFFERED
     Environment=PYTHONUNBUFFERED=true
-	
+
+	# Adjust this line to the correct path to test.py
     ExecStart=/usr/bin/python /path/to/test.py
 
     # Note that we use Type=notify here since test.py will send "READY=1"
