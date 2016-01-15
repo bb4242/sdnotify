@@ -2,12 +2,12 @@ from distutils.core import setup
 setup(
     name = 'sdnotify',
     packages = ['sdnotify'],
-    version = '0.1.0',
+    version = '0.2.0',
     description = 'A pure Python implementation of systemd\'s service notification protocol (sd_notify)',
     author = 'Brett Bethke',
     author_email = 'bbethke@gmail.com',
     url = 'https://github.com/bb4242/sdnotify',
-    download_url = 'https://github.com/bb4242/sdnotify/tarball/0.1',
+    download_url = 'https://github.com/bb4242/sdnotify/tarball/0.2.0',
     keywords = ['systemd'],
     classifiers = [
         "Programming Language :: Python",
@@ -18,4 +18,9 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    long_description = """\
+systemd Service Notification
+
+This is a pure Python implementation of the systemd sd_notify protocol. This protocol can be used to inform systemd about service start-up completion, watchdog events, and other service status changes. Thus, this package can be used to write system services in Python that play nicely with systemd. sdnotify is compatible with both Python 2 and Python 3.
+"""
 )

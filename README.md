@@ -1,4 +1,4 @@
-# systemd Notification
+# systemd Service Notification
 
 This is a pure Python implementation of the
 [`systemd`](http://www.freedesktop.org/wiki/Software/systemd/)
