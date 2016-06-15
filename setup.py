@@ -1,13 +1,16 @@
 from distutils.core import setup
+
+VERSION='0.3.1'
+
 setup(
     name = 'sdnotify',
     packages = ['sdnotify'],
-    version = '0.3.0',
+    version = VERSION,
     description = 'A pure Python implementation of systemd\'s service notification protocol (sd_notify)',
     author = 'Brett Bethke',
     author_email = 'bbethke@gmail.com',
     url = 'https://github.com/bb4242/sdnotify',
-    download_url = 'https://github.com/bb4242/sdnotify/tarball/v0.3.0',
+    download_url = 'https://github.com/bb4242/sdnotify/tarball/v{}'.format(VERSION),
     keywords = ['systemd'],
     classifiers = [
         "Programming Language :: Python",
@@ -18,6 +21,7 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    data_files = [("", ["LICENSE.txt"])],
     long_description = """\
 systemd Service Notification
 
