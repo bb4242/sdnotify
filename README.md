@@ -8,6 +8,12 @@ completion, watchdog events, and other service status changes. Thus, this
 package can be used to write system services in Python that play nicely with
 `systemd`. `sdnotify` is compatible with both Python 2 and Python 3.
 
+Normally the `SystemdNotifier.notify` method silently ignores exceptions (for example, if the
+systemd notification socket is not available) to allow applications to
+function on non-systemd based systems. However, setting `debug=True` will
+cause this method to raise any exceptions generated to the caller, to
+aid in debugging.
+
 # Example Usage
 
 This is an example of a simple Python service that informs `systemd` when its
