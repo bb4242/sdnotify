@@ -21,7 +21,6 @@ setup(
         "Operating System :: POSIX :: Linux",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
-    data_files = [("", ["LICENSE.txt"])],
     long_description = """\
 systemd Service Notification
 
