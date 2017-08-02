@@ -2,7 +2,7 @@ import socket
 import os
 import sys
 
-__version__ = "0.3.0"
+__version__ = "0.3.2"
 
 # Byte conversion utility for compatibility between
 # Python 2 and 3.
