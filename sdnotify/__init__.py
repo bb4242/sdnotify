@@ -37,7 +37,7 @@ class SystemdNotifier:
             if addr[0] == '@':
                 addr = '\0' + addr[1:]
             self.socket.connect(addr)
-        except:
+        except Exception:
             self.socket = None
             if self.debug:
                 raise
@@ -54,6 +54,6 @@ class SystemdNotifier:
         aid in debugging."""
         try:
             self.socket.sendall(_b(state))
-        except:
+        except Exception:
             if self.debug:
                 raise
